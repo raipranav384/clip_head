@@ -89,6 +89,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">CLIP-Head: Text-Guided Generation of Textured Neural Parametric 3D Head Models</h1>
+          <h1 class="subtitle has-text-centered">SIGGRAPH Asia 2023 Technical Communications</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <!-- <a href="https://keunhong.com">Pranav Manu</a><sup>1</sup>,</span> -->
@@ -113,7 +114,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="https://3dcomputervision.github.io/">3DVisLab</a>, CVIT, International Institute of Information Technology, Hyderabad</span>
+            <span class="author-block">CVIT, International Institute of Information Technology, Hyderabad</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
@@ -235,7 +236,7 @@
         </div>
       </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">CLIP-head</span> can be used to create a 3D neural head model, conditioned on natural text prompt.
+        <span class="dnerf">CLIP-Head</span> can be used to create a 3D neural head model, conditioned on natural text prompt.
       </h2>
     </div>
   </div>
@@ -308,19 +309,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose CLIP-Head, a novel approach towards text-driven neural parametric 3D head model generation. 
+            We propose <span class="dnerf">CLIP-Head</span>, a novel approach towards text-driven neural parametric 3D head model generation. 
           </p>
           <p>
             
             Our method takes simple text prompts in natural language, describing the appearance \& facial expressions, and generates 3D neural head avatars with accurate geometry and high-quality texture maps. 
-            Unlike existing approaches, which use conventional parametric head models with limited control and expressiveness, we leverage Neural Parametric Head Models (NPHM),
+            Unlike existing approaches, which use conventional parametric head models with limited control and expressiveness, we leverage Neural Parametric Head Models (<a href="https://simongiebenhain.github.io/NPHM/">NPHM</a>),
             offering disjoint latent codes for the disentangled encoding of identities and expressions. To facilitate the text-driven generation, we propose two weakly-supervised mapping networks to map the CLIP's encoding of input text prompt to NPHM's disjoint identity and expression vector.
           </p>
-          <p>
-            <span class="dnerf">CLIP-Head</span> can generate a 3D head model, along with the texture, without any iterative optimisation,
-            and can be used to generate not only novel head models, but also existing identities, as it is built upon Stable-Diffusion which was trained 
-            on a large number of identities.
-          </p>
+          
         </div>
       </div>
     </div>
@@ -339,10 +336,10 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">Method Figure</h2>
         <div class="publication-video">
           <image >
-            <img src="./static/images/Pipeline.png" alt="CLIP-Head" width="100%">
+            <img src="./static/images/pipeline.svg" alt="CLIP-Head" width="100%">
           </image>
         </div>
       </div>
@@ -362,8 +359,9 @@
         <div class="content">
           <h2 class="title is-3">Various identities</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            <span class="dnerf">CLIP-Head</span> can generate a 3D head model, along with the texture, without any iterative optimisation,
+            and can be used to generate not only novel head models, but also existing identities, as it is built upon Stable-Diffusion which was trained 
+            on a large number of identities.
           </p>
           <section class="hero is-light is-small">
             <div class="hero-body">
