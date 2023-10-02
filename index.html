@@ -89,6 +89,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">CLIP-Head: Text-Guided Generation of Textured Neural Parametric 3D Head Models</h1>
+          <h1 class="subtitle has-text-centered"> </h1>
           <h1 class="subtitle has-text-centered">SIGGRAPH Asia 2023 Technical Communications</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -236,7 +237,7 @@
         </div>
       </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">CLIP-Head</span> can be used to create a 3D neural head model, conditioned on natural text prompt.
+        <span class="dnerf">CLIP-Head</span> generates textured 3D neural head meshes, conditioned on simple text prompts.
       </h2>
     </div>
   </div>
@@ -306,16 +307,20 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
+
           <p>
             We propose <span class="dnerf">CLIP-Head</span>, a novel approach towards text-driven neural parametric 3D head model generation. 
+            Our method takes simple text prompts in natural language, describing the appearance & facial expressions, and generates 3D neural head avatars with accurate geometry and high-quality texture maps. 
+            Unlike existing approaches, which use conventional parametric head models with limited control and expressiveness, we leverage Neural Parametric Head Models (<a href="https://simongiebenhain.github.io/NPHM/">NPHM</a>), offering disjoint latent codes for the disentangled encoding of identities and expressions. 
           </p>
+
           <p>
-            
-            Our method takes simple text prompts in natural language, describing the appearance \& facial expressions, and generates 3D neural head avatars with accurate geometry and high-quality texture maps. 
-            Unlike existing approaches, which use conventional parametric head models with limited control and expressiveness, we leverage Neural Parametric Head Models (<a href="https://simongiebenhain.github.io/NPHM/">NPHM</a>),
-            offering disjoint latent codes for the disentangled encoding of identities and expressions. To facilitate the text-driven generation, we propose two weakly-supervised mapping networks to map the CLIP's encoding of input text prompt to NPHM's disjoint identity and expression vector.
+            To facilitate the text-driven generation, we propose two weakly-supervised mapping networks to map the CLIP’s encoding of input text prompt to NPHM’s disjoint identity and expression vector. 
+            The predicted latent codes are then fed to a pre-trained NPHM network to generate 3D head geometry. 
+            Since NPHM mesh doesn’t support textures, we propose a novel aligned parametrization technique, followed by text-driven generation of texture maps by leveraging a recently proposed controllable diffusion model for the task of text-to-image synthesis. 
+            Our method is capable of generating 3D head meshes with arbitrary appearances and a variety of facial expressions, along with high-quality texture details. 
           </p>
           
         </div>
@@ -336,7 +341,7 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method Figure</h2>
+        <!-- <h2 class="title is-3">Method Figure</h2> -->
         <div class="publication-video">
           <image >
             <img src="./static/images/pipeline.svg" alt="CLIP-Head" width="100%">
@@ -350,18 +355,25 @@
 
 
 <section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+
+        <image >
+          <img src="./static/images/result2.png" alt="results1" width="75%">
+        </image>
+
+    </div>
+  </div>
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
-
+      
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Various identities</h2>
           <p>
-            <span class="dnerf">CLIP-Head</span> can generate a 3D head model, along with the texture, without any iterative optimisation,
-            and can be used to generate not only novel head models, but also existing identities, as it is built upon Stable-Diffusion which was trained 
-            on a large number of identities.
+            The "Texture Synthesis" module leverages Stable Diffusion, empowering the <span class="dnerf">CLIP-Head</span> with the capability to create 3D representations of heads with diverse identities and appearances based on textual prompts.
           </p>
           <section class="hero is-light is-small">
             <div class="hero-body">
@@ -522,6 +534,8 @@
       </div>
     </div> -->
     <!--/ Concurrent Work. -->
+
+  </div>
 
   </div>
 </section>
